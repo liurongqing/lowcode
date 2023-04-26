@@ -1,4 +1,5 @@
 import { init, plugins, workspace } from '@alilc/lowcode-engine';
+import { CheckOutlined } from "@ant-design/icons";
 import { createFetchHandler } from '@alilc/lowcode-datasource-fetch-handler';
 import EditorInitPlugin from './plugins/plugin-editor-init';
 import UndoRedoPlugin from '@alilc/lowcode-plugin-undo-redo';
@@ -25,6 +26,7 @@ import { PluginAppTopArea } from './plugins/app/plugin-app-top-are';
 import { PluginAppSubTopArea } from './plugins/app/plugin-app-sub-top-are';
 import { PluginAppLeftArea } from './plugins/app/plugin-app-left-are';
 import './global.scss';
+import { IPublicModelPluginContext } from '@alilc/lowcode-types';
 
 async function registerPlugins() {
   await plugins.register(InjectPlugin);
@@ -104,8 +106,41 @@ async function registerPlugins() {
   await plugins.register(lowcodePlugin);
 }
 
+export const pageView = (ctx: IPublicModelPluginContext, options: any) => {
+  return {
+    async init() {
+      // 注册插件
+        await registerPlugins();
+      // await ctx.plugins.register(EditorInitPlugin);
+      // await ctx.plugins.register(LogoSamplePlugin);
+      // await ctx.plugins.register(ComponentPanelPlugin);
+    },
+  };
+};
+
+pageView.viewName = 'page';
+function PageResourceType(ctx: IPublicModelPluginContext) {
+  return {
+    category: '页面',
+    defaultViewType: 'page',
+    defaultTitle: '这是资源页面',
+    // defaultTitle: window.pageConfig.title,
+    editorViews: [pageView],
+    icon: CheckOutlined,
+
+    async init() {
+      // await ctx.plugins.register(pluginDemo);
+    },
+  };
+}
+
+PageResourceType.resourceName = 'page';
+PageResourceType.resourceType = 'editor';
+
 (async function main() {
   // await registerPlugins();
+
+  workspace.registerResourceType(PageResourceType);
 
   await workspace.plugins.register(PluginAppTopArea);
   await workspace.plugins.register(PluginAppSubTopArea);
