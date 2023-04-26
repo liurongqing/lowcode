@@ -1,5 +1,5 @@
 import { init, plugins, workspace } from '@alilc/lowcode-engine';
-import { CheckOutlined } from "@ant-design/icons";
+import { CheckOutlined } from '@ant-design/icons';
 import { createFetchHandler } from '@alilc/lowcode-datasource-fetch-handler';
 import EditorInitPlugin from './plugins/plugin-editor-init';
 import UndoRedoPlugin from '@alilc/lowcode-plugin-undo-redo';
@@ -25,6 +25,7 @@ import appHelper from './appHelper';
 import { PluginAppTopArea } from './plugins/app/plugin-app-top-are';
 import { PluginAppSubTopArea } from './plugins/app/plugin-app-sub-top-are';
 import { PluginAppLeftArea } from './plugins/app/plugin-app-left-are';
+import { PluginResourceTopArea } from './plugins/resource/plugin-resource-page';
 import './global.scss';
 import { IPublicModelPluginContext } from '@alilc/lowcode-types';
 
@@ -110,7 +111,7 @@ export const pageView = (ctx: IPublicModelPluginContext, options: any) => {
   return {
     async init() {
       // 注册插件
-        await registerPlugins();
+      await registerPlugins();
       // await ctx.plugins.register(EditorInitPlugin);
       // await ctx.plugins.register(LogoSamplePlugin);
       // await ctx.plugins.register(ComponentPanelPlugin);
@@ -129,7 +130,7 @@ function PageResourceType(ctx: IPublicModelPluginContext) {
     icon: CheckOutlined,
 
     async init() {
-      // await ctx.plugins.register(pluginDemo);
+      await ctx.plugins.register(PluginResourceTopArea);
     },
   };
 }
