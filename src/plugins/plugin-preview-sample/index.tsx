@@ -26,7 +26,7 @@ const PreviewSamplePlugin = (ctx: IPublicModelPluginContext) => {
         },
         content: (
           <Button type="primary" onClick={() => doPreview()}>
-            预览
+            预览02
           </Button>
         ),
       });

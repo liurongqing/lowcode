@@ -1,4 +1,5 @@
 import { IPublicModelPluginContext } from '@alilc/lowcode-types';
+import { Header } from './Header';
 
 export function PluginAppSubTopArea(ctx: IPublicModelPluginContext) {
   const { skeleton } = ctx;
@@ -8,12 +9,7 @@ export function PluginAppSubTopArea(ctx: IPublicModelPluginContext) {
         area: 'subTopArea',
         type: 'Widget',
         name: 'PluginAppSubTopArea',
-        // props: {
-        //   align: 'left',
-        //   width: 800,
-        // },
-        index: -1,
-        content: <h1>sub Top area</h1>,
+        content: Header,
         contentProps: {
           ctx,
         },

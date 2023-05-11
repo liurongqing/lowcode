@@ -14,7 +14,7 @@ const ComponentPanelPlugin = (ctx: IPublicModelPluginContext) => {
         props: {
           align: 'top',
           icon: 'zujianku',
-          description: '组件库',
+          description: '组件库001',
         },
       });
       componentsPane?.disable?.();

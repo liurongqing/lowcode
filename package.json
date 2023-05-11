@@ -6,7 +6,7 @@
   "license": "MIT",
   "main": "index.js",
   "scripts": {
-    "start": "build-scripts start --disable-reload --port 5556",
+    "start": "build-scripts start --port 5556",
     "build": "build-scripts build",
     "prepublishOnly": "npm run build",
     "pub": "node ./scripts/watchdog.js && npm pub"
@@ -24,15 +24,17 @@
     "@alilc/lowcode-plugin-inject": "^1.2.1",
     "@alilc/lowcode-plugin-manual": "^1.0.4",
     "@alilc/lowcode-plugin-schema": "^1.0.2",
+    "@alilc/lowcode-plugin-set-ref-prop": "^1.0.1",
     "@alilc/lowcode-plugin-simulator-select": "^1.0.2",
     "@alilc/lowcode-plugin-undo-redo": "^1.0.0",
     "@alilc/lowcode-plugin-zh-en": "^1.0.0",
-    "@alilc/lowcode-plugin-set-ref-prop": "^1.0.1",
     "@alilc/lowcode-react-renderer": "^1.1.2",
     "@alilc/lowcode-setter-behavior": "^1.0.0",
     "@alilc/lowcode-setter-title": "^1.0.2",
     "antd": "^4.21.4",
     "moment": "^2.29.3",
+    "react-is": "^18.2.0",
+    "sass": "^1.62.1",
     "uuid": "^8.3.2"
   },
   "devDependencies": {

@@ -26,6 +26,8 @@ import { PluginAppTopArea } from './plugins/app/plugin-app-top-are';
 import { PluginAppSubTopArea } from './plugins/app/plugin-app-sub-top-are';
 import { PluginAppLeftArea } from './plugins/app/plugin-app-left-are';
 import { PageResourceType } from './plugins/resource/plugin-resource-type';
+
+import "antd/dist/antd.css"
 import './global.scss';
 
 export async function registerPlugins() {

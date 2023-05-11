@@ -2,12 +2,13 @@ import { CheckOutlined } from '@ant-design/icons';
 import { PluginResourceTopArea } from '../plugin-resource-page';
 import { IPublicModelPluginContext, IPublicTypeResourceType } from '@alilc/lowcode-types';
 import { registerPlugins } from "../../../index";
+import EditorInitPlugin from "../../plugin-editor-init";
 
 export const pageView = (ctx: IPublicModelPluginContext, options: any) => {
   return {
     async init() {
       // 注册插件
-      await registerPlugins();
+      // await registerPlugins();
       // await ctx.plugins.register(EditorInitPlugin);
       // await ctx.plugins.register(LogoSamplePlugin);
       // await ctx.plugins.register(ComponentPanelPlugin);

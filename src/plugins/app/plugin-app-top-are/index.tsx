@@ -1,4 +1,5 @@
 import { IPublicModelPluginContext } from '@alilc/lowcode-types';
+import { Header } from "./Header";
 
 export function PluginAppTopArea(ctx: IPublicModelPluginContext) {
   const { skeleton } = ctx;
@@ -13,7 +14,7 @@ export function PluginAppTopArea(ctx: IPublicModelPluginContext) {
           width: 800,
         },
         index: -1,
-        content: <h1>Top</h1>,
+        content: Header,
         contentProps: {
           ctx,
         },
